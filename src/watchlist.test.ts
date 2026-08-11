@@ -65,10 +65,7 @@ describe("unwatched", () => {
 
 describe("hasWatched", () => {
   it("returns true if the film has been watched", () => {
-    const list = [
-      film({ id: 1, watched: true }),
-      film({ id: 2, watched: false }),
-    ];
+    const list = [film({ id: 1, watched: true }), film({ id: 2, watched: false })];
 
     expect(hasWatched(list, 1)).toBe(true);
     expect(hasWatched(list, 2)).toBe(false);
