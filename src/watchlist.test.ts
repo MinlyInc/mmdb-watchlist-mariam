@@ -84,12 +84,11 @@ describe("stats", () => {
     expect(stats(list).totalRuntimeMinutes).toBe(206);
   });
 
-  it("averages the ratings", () => {
+  it("averages the ratings from rated films only", () => {
     const list = [
       film({ id: 1, rating: 8 }),
       film({ id: 2, rating: 6 }),
       film({ id: 3, rating: null }),
     ];
-    expect(stats(list).averageRating).toBeCloseTo(4.67);
-  });
+    expect(stats(list).averageRating).toBeCloseTo(7);  });
 });
