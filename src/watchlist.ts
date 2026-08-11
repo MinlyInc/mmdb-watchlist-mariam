@@ -23,8 +23,7 @@ export function markWatched(list: WatchlistItem[], id: number): WatchlistItem[] 
 
 /** The films still to watch, best rated first. */
 export function unwatched(list: WatchlistItem[]): WatchlistItem[] {
-  return list
-    .filter((item) => !item.watched)
+  return list.filter((item) => !item.watched);
 }
 
 /** Summarises a watchlist: how much is on it, how long it would take, how good it is. */

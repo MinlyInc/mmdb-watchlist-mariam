@@ -90,5 +90,6 @@ describe("stats", () => {
       film({ id: 2, rating: 6 }),
       film({ id: 3, rating: null }),
     ];
-    expect(stats(list).averageRating).toBeCloseTo(7);  });
+    expect(stats(list).averageRating).toBeCloseTo(7);
+  });
 });
