@@ -25,3 +25,8 @@ export function markWatched(list: WatchlistItem[], id: number): WatchlistItem[] 
 export function unwatched(list: WatchlistItem[]): WatchlistItem[] {
   return list.filter((item) => !item.watched);
 }
+
+/** Returns true if the film has been watched otherwise false. */
+export function hasWatched(list: WatchlistItem[], id: number): boolean {
+  return list.some((item) => item.id === id && item.watched);
+}

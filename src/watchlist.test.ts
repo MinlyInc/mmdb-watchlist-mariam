@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { add, markWatched, remove, unwatched } from "./watchlist.ts";
+import { add, markWatched, remove, unwatched, hasWatched } from "./watchlist.ts";
 import type { WatchlistItem } from "./types.ts";
 
 function film(overrides: Partial<WatchlistItem> = {}): WatchlistItem {
@@ -60,5 +60,17 @@ describe("unwatched", () => {
       film({ id: 3, watched: false }),
     ];
     expect(unwatched(list).map((f) => f.id)).toEqual([2, 3]);
+  });
+});
+
+describe("hasWatched", () => {
+  it("returns true if the film has been watched", () => {
+    const list = [
+      film({ id: 1, watched: true }),
+      film({ id: 2, watched: false }),
+    ];
+
+    expect(hasWatched(list, 1)).toBe(true);
+    expect(hasWatched(list, 2)).toBe(false);
   });
 });
